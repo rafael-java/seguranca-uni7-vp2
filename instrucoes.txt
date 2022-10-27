@@ -1,0 +1,16 @@
+[14/10 20:18] Alex Ferreira Ramires TrajanoTrabalho VP2
+    
+O trabalho a seguir deve ser feito de forma individual. 
+A entrega deve ser feita até as 20:40 do dia 28/10/2022 no e-mail alex.trajano@uni7.edu.br.
+
+1 - Implemente um sistema que simula uma troca de mensagens entre duas partes cifradas através do RSA. Não é necessário pedir o input do usuário, bastando que o sistema exercite a geração de pares de chaves públicas e privadas aleatórias, seguido da cifragem e decifragem de mensagens de forma correta.
+
+- OpenSSL - como usar e explicar
+2 - Pesquise por ferramentas que possam ser utilizadas pela linha de comando para gerar pares de chaves assimétricas. Enumere os comandos necessários para criar um par de chaves, explicando como o comando deve ser executado. (tutorial)
+
+3 - Implemente um sistema que receba pela linha de comando o caminho de 2 arquivos: uma chave privada e um arquivo de texto. Seu sistema deve gerar uma assinatura digital para o arquivo, tendo como resultado um novo arquivo assinado. Esse arquivo deve ser armazenado no mesmo diretório do arquivo original, com nome terminando em "_assinado".
+
+4 - Implemente um sistema que receba pela linha de comando o caminho de 2 arquivos: uma chave pública e um arquivo de texto contendo uma assinatura digital. Seu sistema deve validar a assinatura digital contida no arquivo, informando para o usuário se a assinatura é válida ou não.
+
+
+<https://teams.microsoft.com/l/message/19:GFi3M10kvdpcp2hTSH8SYqGTFNe2Zh-NyIPySDucRc01@thread.tacv2/1665789498287?tenantId=7d7d36fe-93fa-475b-8cb9-67d71e8211fe&amp;groupId=f73b7e2b-f8b3-46c4-8d52-f94f63a4a71c&amp;parentMessageId=1665789498287&amp;teamName=SEGURANÇA DE SISTEMAS [2022.2-T028-2772-N-01]&amp;channelName=Geral&amp;createdTime=1665789498287&amp;allowXTenantAccess=false>
