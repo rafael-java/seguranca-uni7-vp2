@@ -9,11 +9,11 @@ import re
 
 def getFiles(dirr):
     print(dirr)
-    print("ATENÇÃO: OS PATHS PODEM CONTER ASPAS SIMPLES, MAS DEVEM TER BARRAS E NÃO TER ESPAÇOS")
+    print("ATENÇÃO: OS PATHS PODEM CONTER ASPAS SIMPLES, MAS DEVEM TER BARRAS E NÃO TER ESPAÇOS NO COMEÇO OU NO FINAL")
     print("Esse é seu path atual, caso deseje usar ele para selecionar os arquivos, digite 1." +
           " Obs: você só poderá entrar em pastas filhas desse diretório." +
-          " Digite qualquer outro valor para continuar")
-    continuar = input("\nDIGITE OU INFORME O PATH PRINCIPAL: ") != "1"
+          " Digite qualquer outro valor para continuar e informar um path")
+    continuar = input("\nDIGITE UMA OPÇÃO: ") != "1"
     publicKeyPath = ""
     txtFilePath = ""
 
@@ -34,7 +34,7 @@ def getFiles(dirr):
             print("")
             print(os.listdir(dirr))
             valor = input(
-                "Isso que existe na pasta local, digite o nome do arquivo que você deseja usar como publicKey ou da pasta que você deseja entrar: ")
+                "Isso é o que existe na pasta, digite o nome do arquivo que você deseja usar como PUBLICKEY ou da pasta que você deseja entrar: ")
             dirr = os.path.join(dirr, valor)
 
         if (os.path.exists(dirr)):
@@ -50,7 +50,7 @@ def getFiles(dirr):
             print("")
             print(os.listdir(dirr))
             valor = input(
-                "Isso que existe na pasta local, digite o nome do arquivo que você deseja usar como txtFile assinado ou da pasta que você deseja entrar: ")
+                "Isso que existe na pasta, digite o nome do arquivo que você deseja usar como TXTFILE _ASSINADO ou da pasta que você deseja entrar: ")
             dirr = os.path.join(dirr, valor)
 
         if (os.path.exists(dirr)):

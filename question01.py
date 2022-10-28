@@ -9,11 +9,11 @@ import errno
 
 # Geração de pares de chaves públicas e privadas aleatórias
 def generatePairOfKeys(parentDir, bits):
-    # 2048 é a quantidade de bits que n vai usar
+    # 2048 é a quantidade de bits que N vai usar
     # (https://www.geeksforgeeks.org/how-to-generate-large-prime-numbers-for-rsa-algorithm/#:~:text=The%20recommended%20RSA%20modulus%20size,2048%20bits%20to%204096%20bits).
     # No PDF do NIST (https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf), pag. 54
-    # relaciona o tamanho do n com a força de segurança. 2048 é a força equivalente a 112.
-    # De acordo com a pagina 59, essa quantidade força pode ser usada até 2030.
+    # relaciona o tamanho do N com a força de segurança. 2048 é a força equivalente a 112.
+    # De acordo com a pagina 59, essa quantidade de força pode ser usada até 2030.
     # Curiosidade: para quebrar essa segurança, em um PC clássico, levaria 300 trilhões de anos.
 
     (publicKeyA, privateKeyA) = rsa.newkeys(bits)
@@ -30,7 +30,9 @@ def generatePairOfKeys(parentDir, bits):
             print(error)
             exit()
 
-    # Poderia ser do tipo PEM (Privacy Enhanced Mail) ou DER, Os arquivos DER são mais comumente vistos em contextos Java. O DER é um certificado encodado, enquanto o PEM é o DER convertido para base64, com headers.
+    # Poderia ser do tipo PEM (Privacy Enhanced Mail) ou DER,
+    # Os arquivos DER são mais comumente vistos em contextos Java.
+    # O DER é um certificado encodado, enquanto o PEM é o DER convertido para base64, com headers.
 
     # ParteA
     with open('keysPartA/publicKey.pem', 'wb') as pk:
@@ -52,7 +54,6 @@ def generatePairOfKeys(parentDir, bits):
     with open('keysPartB/privateKey.pem', 'rb') as pk:
         privateKeyB = rsa.PrivateKey.load_pkcs1(pk.read())
 
-    # PS: Não entendi a relação entre n e essas keys
     # Retorna em bytes
     return publicKeyA, publicKeyB, privateKeyA, privateKeyB
 
@@ -127,7 +128,7 @@ if __name__ == "__main__":
     print("Olá, parte A, você recebeu uma mensagem...")
     print("De: PARTE B")
     print(ciphertext)
-    print("s a mensagem...")
+    print("\nDescriptografando a mensagem...")
 
     msg = decryptMessage(ciphertext, privateKeyA)
     if msg:
